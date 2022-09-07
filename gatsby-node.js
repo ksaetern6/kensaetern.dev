@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (articles.length > 0) {
     articles.forEach((article) => {
       createPage({
-        path: `/article/${article.slug}`,
+        path: `/project/${article.slug}`,
         component: articlePost,
         context: {
           slug: article.slug,

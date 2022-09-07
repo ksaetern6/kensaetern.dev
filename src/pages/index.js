@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import ArticlesGrid from "../components/articles-grid"
 import Seo from "../components/seo"
-import Headings from "../components/headings"
+import HeadingsHome from "../components/headings-home"
 
 const IndexPage = () => {
   const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
@@ -23,8 +23,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo seo={{ metaTitle: "Home" }} />
-      <Headings
-        title={strapiGlobal.siteName}
+      <HeadingsHome
+        title="Ken Saetern"
         description={strapiGlobal.siteDescription}
       />
       <main>
