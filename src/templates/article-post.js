@@ -4,6 +4,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import BlocksRenderer from "../components/blocks-renderer"
 import Seo from "../components/seo"
+import { navigate } from "gatsby"
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace"
+import IconButton from "@mui/material/IconButton"
 
 const ArticlePage = ({ data }) => {
   const article = data.strapiArticle
@@ -18,13 +21,22 @@ const ArticlePage = ({ data }) => {
     <Layout as="article">
       <Seo seo={seo} />
       <header className="container max-w-4xl py-8">
+        <IconButton
+          aria-label="Previous Page"
+          onClick={() => navigate(-1)}
+          sx={{ padding: "0", marginBottom: "8px" }}
+        >
+          <KeyboardBackspaceIcon fontSize="large" />
+        </IconButton>
         <h1 className="text-6xl font-bold text-neutral-700">{article.title}</h1>
-        <p className="mt-4 text-2xl text-neutral-500">{article.description}</p>
-        <GatsbyImage
+        <p className="mt-4 text-2xl text-neutral-500">
+          {article.shortDescription}
+        </p>
+        {/* <GatsbyImage
           image={getImage(article?.cover?.localFile)}
           alt={article?.cover?.alternativeText}
           className="mt-6"
-        />
+        /> */}
       </header>
       <main className="mt-8">
         <BlocksRenderer blocks={article.blocks || []} />
@@ -39,7 +51,18 @@ export const pageQuery = graphql`
       id
       slug
       title
-      description
+      shortDescription
+      githubLink
+      externalLink
+      description {
+        data {
+          # processed markdown
+          childMarkdownRemark {
+            html
+            rawMarkdownBody
+          }
+        }
+      }
       blocks {
         ...Blocks
       }

@@ -98,6 +98,7 @@ const Navbar = (props) => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+                href={"/"}
                 sx={{
                   my: 2,
                   color: "rgb(64 64 64 / var(--tw-text-opacity))",
