@@ -12,8 +12,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LaunchIcon from "@mui/icons-material/Launch"
 import ArticleRichText from "./article-rich-text"
-import { CardActionArea } from "@mui/material"
-// import { Description } from "@mui/icons-material"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props
@@ -26,7 +24,7 @@ const ExpandMore = styled((props) => {
   }),
 }))
 
-export default function ArticleCard({ article }) {
+function ArticleCard({ article }) {
   const [expanded, setExpanded] = React.useState(false)
 
   const handleExpandClick = () => {
@@ -122,3 +120,4 @@ export const query = graphql`
     }
   }
 `
+export default ArticleCard
