@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import ArticlesGrid from "../components/articles-grid"
 import Seo from "../components/seo"
 import HeadingsHome from "../components/headings-home"
+import ExperienceBlock from "../components/experience-block"
 
 const IndexPage = () => {
   const { allStrapiArticle, strapiGlobal } = useStaticQuery(graphql`
@@ -29,6 +30,7 @@ const IndexPage = () => {
       />
       <main>
         <ArticlesGrid articles={allStrapiArticle.nodes} />
+        <ExperienceBlock></ExperienceBlock>
       </main>
     </Layout>
   )
