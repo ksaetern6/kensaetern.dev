@@ -12,6 +12,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LaunchIcon from "@mui/icons-material/Launch"
 import ArticleRichText from "./article-rich-text"
+import { Tooltip } from "@mui/material"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props
@@ -58,13 +59,20 @@ function ArticleCard({ article }) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing sx={{ mt: "auto" }}>
-        <IconButton
-          aria-label="link to Github repo"
-          href={article.githubLink ?? "/"}
-          target="_blank"
-        >
-          <GitHubIcon />
-        </IconButton>
+        {article.githubLink ? (
+          <IconButton
+            aria-label="link to Github repo"
+            href={article.githubLink ?? "/"}
+            target="_blank"
+          >
+            <GitHubIcon />
+          </IconButton>
+        ) : (
+          <Tooltip title="Client has opted for this repo to be private">
+            <GitHubIcon />
+          </Tooltip>
+        )}
+
         <IconButton
           aria-label="Go to external website"
           href={article.externalLink ?? "/"}
