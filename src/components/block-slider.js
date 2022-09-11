@@ -8,7 +8,12 @@ import Carousel from "react-material-ui-carousel"
 const BlockSlider = ({ data }) => {
   return (
     <div className="container max-w-4xl">
-      <Carousel autoPlay={false} animation={"slide"} height={500}>
+      <Carousel
+        autoPlay={false}
+        animation={"slide"}
+        height={500}
+        navButtonsAlwaysVisible
+      >
         {data.files.map((file) => (
           <GatsbyImage
             key={file.id}
