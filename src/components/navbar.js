@@ -14,7 +14,7 @@ import ListItemButton from "@mui/material/ListItemButton"
 
 const drawerWidth = 240
 
-const pages = ["Projects", "Resume", "Social"]
+const pages = ["Projects", "Resume"]
 
 const Navbar = (props) => {
   const { window } = props
