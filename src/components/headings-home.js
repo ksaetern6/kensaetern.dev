@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import Divider from "@mui/material/Divider"
 import { Grid } from "@mui/material"
+import SocialBlock from "./social-block"
 
 const HeadingsHome = ({ title, description }) => {
   return (
@@ -28,6 +29,9 @@ const HeadingsHome = ({ title, description }) => {
           {description}
         </Typography>
       )}
+      <Grid item container direction="row" justifyContent="center">
+        <SocialBlock></SocialBlock>
+      </Grid>
       <Grid item container direction="row" justifyContent="center">
         <Divider
           sx={{

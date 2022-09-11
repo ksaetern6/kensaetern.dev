@@ -31,6 +31,9 @@ module.exports = {
           {
             singularName: "category",
           },
+          {
+            singularName: "social",
+          },
         ],
         singleTypes: [
           {
