@@ -37,7 +37,7 @@ const steps = [
     role: "Web Developer",
     duration: "September 2019 - November 2020",
     description: [
-      "Maintaned and updated company website written in Perl, Javascript, HTML, and CSS",
+      "Maintained and updated company website written in Perl, Javascript, HTML, and CSS",
       "Improve SEO content of website by staying up-to-date with current SEO web standards",
       "Collaborate with a team of other web developers to maintain consistency",
     ],
@@ -79,7 +79,7 @@ export default function VerticalLinearStepper() {
                 textAlign={"left"}
                 paragraph
                 className="py-1"
-                fontSize=".8rem"
+                fontSize=".9rem"
               >
                 {step.duration}
               </Typography>
